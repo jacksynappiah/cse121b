@@ -1,40 +1,62 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CSE 121b | W05: Programming Tasks</title>
+  <!-- Use a descriptive title for the web page -->
+  <title>Joke Generator | CSE 121b | w06-final: Programming Tasks</title>
+  <!-- Use CSS variables to define the colors and fonts of the web page -->
+  <style>
+    :root {
+      --primary-color: #333;
+      --secondary-color: #999;
+      --background-color: #f0f0f0;
+      --container-color: #fff;
+      --button-color: #333;
+      --button-hover-color: #444;
+      --font-size: 20px;
+      --font-family: 'Roboto', sans-serif;
+      --heading-font-family: 'Lobster', cursive;
+    }
+  </style>
+  <!-- Use Google Fonts to import custom fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;600&display=swap"
-    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Roboto:wght@400;600&display=swap" rel="stylesheet">
+  <!-- Use an external stylesheet for the main CSS rules -->
   <link rel="stylesheet" href="styles/main.css">
-  
+  <!-- Use an internal stylesheet for the specific CSS rules for this page -->
   <style>
-    /* Add some CSS styling */
+    /* Use consistent indentation and spacing for readability */
     body {
-      font-family: Arial, sans-serif;
-      background-color: #f0f0f0;
+      font-family: var(--font-family);
+      background-color: var(--background-color);
     }
 
     #joke-container {
       max-width: 600px;
       margin: 20px auto;
       padding: 20px;
-      border: 1px solid #ccc;
-      background-color: #fff;
+      border: 1px solid var(--secondary-color);
+      background-color: var(--container-color);
+      /* Use transitions and transforms to add interactivity */
+      transition: transform 0.3s ease-in-out;
+    }
+
+    #joke-container:hover {
+      transform: scale(1.05);
     }
 
     #joke-text, #joke-setup, #joke-delivery {
-      font-size: 20px;
+      font-size: var(--font-size);
       font-weight: bold;
-      color: #333;
+      color: var(--primary-color);
     }
 
     #joke-category, #joke-type {
-      font-size: 16px;
+      font-size: calc(var(--font-size) * 0.8);
       font-style: italic;
-      color: #999;
+      color: var(--secondary-color);
     }
 
     #joke-button {
@@ -42,47 +64,41 @@
       margin: 20px auto;
       padding: 10px 20px;
       border: none;
-      background-color: #333;
-      color: #fff;
+      background-color: var(--button-color);
+      color: var(--container-color);
       cursor: pointer;
+      /* Use animations and keyframes to add interactivity */
+      animation: pulse 2s infinite;
     }
 
     #joke-button:hover {
-      background-color: #444;
+      background-color: var(--button-hover-color);
     }
 
-    #joke-container {
-  /* ... */
-  transition: transform 0.3s ease-in-out;
-}
+    @keyframes pulse {
+      0% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.1);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
 
-#joke-container:hover {
-  transform: scale(1.05);
-}
-
-#joke-button {
-  /* ... */
-  animation: pulse 2s infinite;
-}
-
-@keyframes pulse {
-  0% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.1);
-  }
-  100% {
-    transform: scale(1);
-  }
-}
-
+    h1 {
+      font-family: var(--heading-font-family);
+      font-size: calc(var(--font-size) * 2);
+      color: var(--primary-color);
+      text-align: center;
+    }
   </style>
 </head>
 <body>
   <nav>
     <ul id="menu">
-      <li><a id="toggleMenu">&equiv;</a></li>
+      <li><a id="toggleMenu">≡</a></li>
       <li><a href="index.html">Home</a></li>
       <li><a href="w01-task.html">W1 Task</a></li>
       <li><a href="w03-task.html">W3 Task</a></li>
@@ -93,25 +109,29 @@
   </nav>
   <main id="gridly">
     <h1>Joke Generator</h1>
-  <div id="joke-container">
-    <p id="joke-text"></p>
-    <p id="joke-category"></p>
-    <p id="joke-type"></p>
-    <p id="joke-setup"></p>
-    <p id="joke-delivery"></p>
-  </div>
-</main>
+    <div id="joke-container">
+      <p id="joke-text"></p>
+      <p id="joke-category"></p>
+      <p id="joke-type"></p>
+      <p id="joke-setup"></p>
+      <p id="joke-delivery"></p>
+    </div>
+  </main>
   <button id="joke-button">Get another joke</button>
 
   <footer>
-    &copy;<span id="year"></span> | Week 06 - Joke Generator | CSE 121b
+    ©<span id="year"></span> | Week 06 - Joke Generator | CSE 121b
   </footer>
+  <!-- Use external scripts for the main JavaScript logic -->
   <script src="scripts/main.js"></script>
+  <!-- Use an internal script to set the current year -->
   <script>
     document.getElementById("year").innerHTML = new Date().getFullYear();
   </script>
+  <!-- Use an external script for the specific JavaScript logic for this page -->
   <script src="scripts/w06-final.js"></script>
 </body>
 </html>
+
 
 
