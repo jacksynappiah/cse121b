@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSE 121b | W05: Programming Tasks</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;600&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="styles/main.css">
+  
+  <style>
+    /* Add some CSS styling */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+    }
+
+    #joke-container {
+      max-width: 600px;
+      margin: 20px auto;
+      padding: 20px;
+      border: 1px solid #ccc;
+      background-color: #fff;
+    }
+
+    #joke-text, #joke-setup, #joke-delivery {
+      font-size: 20px;
+      font-weight: bold;
+      color: #333;
+    }
+
+    #joke-category, #joke-type {
+      font-size: 16px;
+      font-style: italic;
+      color: #999;
+    }
+
+    #joke-button {
+      display: block;
+      margin: 20px auto;
+      padding: 10px 20px;
+      border: none;
+      background-color: #333;
+      color: #fff;
+      cursor: pointer;
+    }
+
+    #joke-button:hover {
+      background-color: #444;
+    }
+
+    #joke-container {
+  /* ... */
+  transition: transform 0.3s ease-in-out;
+}
+
+#joke-container:hover {
+  transform: scale(1.05);
+}
+
+#joke-button {
+  /* ... */
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+  </style>
+</head>
+<body>
+  <nav>
+    <ul id="menu">
+      <li><a id="toggleMenu">&equiv;</a></li>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="w01-task.html">W1 Task</a></li>
+      <li><a href="w03-task.html">W3 Task</a></li>
+      <li><a href="w04-task.html">W4 Task</a></li>
+      <li><a href="w05-task.html">W5 Task</a></li>
+      <li><a href="project.html" class="active">Project</a></li>
+    </ul>
+  </nav>
+  <main id="gridly">
+    <h1>Joke Generator</h1>
+  <div id="joke-container">
+    <p id="joke-text"></p>
+    <p id="joke-category"></p>
+    <p id="joke-type"></p>
+    <p id="joke-setup"></p>
+    <p id="joke-delivery"></p>
+  </div>
+</main>
+  <button id="joke-button">Get another joke</button>
+
+  <footer>
+    &copy;<span id="year"></span> | Week 06 - Joke Generator | CSE 121b
+  </footer>
+  <script src="scripts/main.js"></script>
+  <script>
+    document.getElementById("year").innerHTML = new Date().getFullYear();
+  </script>
+  <script src="scripts/w06-final.js"></script>
+</body>
+</html>
+
+
